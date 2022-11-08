@@ -45,3 +45,8 @@ func (p *Block) SetHash() {
 	hash := sha256.Sum256(blockBytes)
 	p.Hash = hash[:] //将数组复制给切片
 }
+
+// 生成创世区块
+func CreateGenesisBlock(data []byte) *Block {
+	return NewBlock(nil, 1, data)
+}
